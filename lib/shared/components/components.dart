@@ -7,6 +7,7 @@ import 'package:udemy_flutter_project/layout/shop_app/cubit/cubit.dart';
 
 import 'package:udemy_flutter_project/shared/cubit/cubit.dart';
 import 'package:udemy_flutter_project/shared/styles/colors.dart';
+import 'package:udemy_flutter_project/shared/styles/icon_broken.dart';
 
 import '../../modules/news_app/web_view/web_view_screen.dart';
 
@@ -19,6 +20,7 @@ Widget defaultButton({
   required String text,
 })=>Container(
   width: width,
+  height: 40.0,
   decoration: BoxDecoration(
     color: background,
     borderRadius: BorderRadius.circular(
@@ -35,6 +37,27 @@ Widget defaultButton({
       ),
     ),
   ),
+);
+
+Widget defaultAppBar({
+  required BuildContext context,
+  String? title,
+  List<Widget>? actions,
+}) => AppBar(
+  leading: IconButton(
+    onPressed: ()
+    {
+      Navigator.pop(context);
+    },
+    icon: Icon(
+      IconBroken.Arrow___Left_2,
+    ),
+  ),
+  titleSpacing: 0.0,
+  title: Text(
+    title!,
+  ),
+  actions: actions,
 );
 
 Widget defaultTextButton({
